@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence version="2.2"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    
+    <persistence-unit name="hello"> <!-- database당 하나씩 만듦 -->
+        <properties>
+            <!-- 필수 속성 -->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <!-- Dialect: 방언, SQL 표준을 지키지 않는 특정 DBMS만의 고유한 기능 -->
+            <!-- javax: 다른 JPA 구현체를 사용해도 그대로 적용됨. 표준. -->
+            <!-- hibernate: hibernate 전용 옵션 -->
+
+            <!-- 옵셥 -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+<!--            <property name="hibernate.hbm2ddl.auto" value="create"/>-->
+        </properties>
+    </persistence-unit>
+</persistence>
